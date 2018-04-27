@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <form id="form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      {{ form.as_p }}
+      <button id="send" class="btn btn-primary" type="button">送信</button>
+    </div>
+    <div id="show-file"></div>
+  </form>
+</div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+  src="http://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
